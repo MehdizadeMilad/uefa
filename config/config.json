@@ -38,5 +38,6 @@
             "acquire": 30000,
             "evict": 120000
         }
-    }
+    },
+    "SESSION_SECRET" : "$#3eshenSecret#$"
 }

@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node index.js",
     "test": "mocha .",
     "dockerize": "npm run cleanDocker; docker build -t milad/uefa .; docker run -p 8000:8080 -d milad/uefa",
-    "cleanDocker": "docker stop $(docker ps -aql);docker rm $(docker ps -aql); docker rmi $(docker images milad/uefa -q)"
+    "cleanDocker": "docker stop $(docker ps -aql);docker rm $(docker ps -aql); docker rmi $(docker images uefa_app -q)"
   },
   "author": "milad",
   "license": "ISC",
   "dependencies": {
+    "client-sessions": "^0.8.0",
     "express": "^4.17.1",
     "pg": "^8.3.0",
     "sequelize": "^6.3.3"
