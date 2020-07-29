@@ -5,6 +5,27 @@ const { TeamController } = require('../controllers');
 
 const { authorizationMiddleware } = require('../../../helpers/helpers');
 
+
+/**
+ * @swagger
+ * /api/team/create:
+ *   post:
+ *     tags:
+ *       - Team
+ *     description: Creates a new Team
+ *     produces:
+ *       - application/text
+ *     parameters:
+ *       - name: Team1
+ *         logo: logo image address
+ *         schema:
+ *           $ref: '#/definitions/Team'
+ *     responses:
+ *       200:
+ *         description: succeed
+ *       500:
+ *          description: failed
+ */
 router.post('/create', authorizationMiddleware, async (req, res) => {
     //TODO Validation
     try {

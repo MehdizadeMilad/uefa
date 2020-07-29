@@ -4,6 +4,21 @@ const { MatchController } = require('../controllers');
 
 const { authorizationMiddleware } = require('../../../helpers/helpers');
 
+/**
+ * @swagger
+ * /api/team/Match:
+ *   post:
+ *     tags:
+ *       - Match
+ *     description: Schedules a group of new Matches
+ *     produces:
+ *       - application/text
+ *     responses:
+ *       200:
+ *         description: succeed
+ *       500:
+ *          description: failed
+ */
 router.post('/create', authorizationMiddleware, async (req, res) => {
     try {
         let result = await MatchController.create();
