@@ -17,7 +17,7 @@ app.use(
     })
 );
 
-require('./routes/index')(app);
+require('./src/routes/index')(app);
 
 app.listen(PORT, HOST);
 
