@@ -1,0 +1,23 @@
+{
+  "name": "uefa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "mocha .",
+    "dockerize": "npm run cleanDocker; docker build -t milad/uefa .; docker run -p 8000:8080 -d milad/uefa",
+    "cleanDocker": "docker stop $(docker ps -aql);docker rm $(docker ps -aql); docker rmi $(docker images milad/uefa -q)"
+  },
+  "author": "milad",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.3.0",
+    "sequelize": "^6.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1"
+  }
+}

@@ -1,0 +1,42 @@
+{
+    "development": {
+        "username": "postgres",
+        "password": null,
+        "database": "uefa",
+        "host": "localhost",
+        "logging": false,
+        "dialect": "postgres",
+        "operatorsAliases": "Sequelize.Op",
+        "dialectOptions": {
+            "timezone": "Asia/Tehran"
+        },
+        "timezone": "Asia/Tehran",
+        "pool": {
+            "max": 100,
+            "min": 0,
+            "idle": 60000,
+            "acquire": 30000,
+            "evict": 120000
+        }
+    },
+    "production": {
+        "username": "postgres",
+        "password": null,
+        "database": "uefa",
+        "host": "localhost",
+        "dialect": "postgres",
+        "operatorsAliases": "Sequelize.Op",
+        "logging": false,
+        "dialectOptions": {
+            "timezone": "Asia/Tehran"
+        },
+        "timezone": "Asia/Tehran",
+        "pool": {
+            "max": 100,
+            "min": 0,
+            "idle": 60000,
+            "acquire": 30000,
+            "evict": 120000
+        }
+    }
+}
