@@ -3,10 +3,6 @@ const express = require('express');
 const clientSession = require('client-sessions');
 const { SESSION_SECRET } = require('./config/config.json');
 
-
-const PORT = 3000;
-const HOST = '0.0.0.0';
-
 const app = express();
 app.use(express.json());
 app.use(
@@ -19,6 +15,14 @@ app.use(
 
 require('./src/routes/index')(app);
 
-app.listen(PORT, HOST);
-
-console.log(`Running on http://${HOST}:${PORT}`);
+module.exports = {
+    start(port) {
+        app.listen(port, () => {
+            console.log(`Running on http://localhost:${port}`);
+        });
+        return app;
+    },
+    stop() {
+        app.close();
+    }
+}

@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "mocha .",
-    "dockerize": "npm run cleanDocker; docker build -t milad/uefa .; docker run -p 8000:8080 -d milad/uefa",
-    "cleanDocker": "docker stop $(docker ps -aql);docker rm $(docker ps -aql); docker rmi $(docker images uefa_app -q)"
+    "start": "node ./bin/start.js",
+    "dev": "nodemon ./bin/start.js",
+    "migrate": "node ./bin/migrate.js",
+    "test": "mocha ."
   },
   "author": "milad",
   "license": "ISC",
@@ -19,6 +19,12 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.0.1"
-  }
+    "mocha": "^8.0.1",
+    "nodemon": "^2.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MehdizadeMilad/uefa.git"
+  },
+  "homepage": "https://github.com/MehdizadeMilad/uefa"
 }
