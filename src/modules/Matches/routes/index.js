@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const { MatchController } = require('../controllers');
 
-router.post('/create', async (req, res) => {
+const { authorizationMiddleware } = require('../../../helpers/helpers');
+
+router.post('/create', authorizationMiddleware, async (req, res) => {
     try {
         let result = await MatchController.create();
         res.status(!!result ? 200 : 500).json(!!result ? 'succeed' : 'failed');
@@ -22,8 +24,8 @@ router.get('/list', async (req, res) => {
     }
 });
 
-router.post('/update', async (req, res) => { res.status(200).json('TODO') })
+router.post('/update', authorizationMiddleware, async (req, res) => { res.status(200).json('TODO') })
 
-router.delete('/delete', async (req, res) => { res.status(200).json('TODO') })
+router.delete('/delete', authorizationMiddleware, async (req, res) => { res.status(200).json('TODO') })
 
 module.exports = router;

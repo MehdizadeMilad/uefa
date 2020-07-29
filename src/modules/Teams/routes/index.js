@@ -3,7 +3,9 @@ const router = express.Router();
 
 const { TeamController } = require('../controllers');
 
-router.post('/create', async (req, res) => {
+const { authorizationMiddleware } = require('../../../helpers/helpers');
+
+router.post('/create', authorizationMiddleware, async (req, res) => {
     //TODO Validation
     try {
         let result = await TeamController.create(req.body);
@@ -25,7 +27,8 @@ router.get('/list', async (req, res) => {
     }
 });
 
-router.post('/update', async (req, res) => { res.status(200).json('TODO') })
-router.delete('/delete', async (req, res) => { res.status(200).json('TODO') })
+router.post('/update', authorizationMiddleware, async (req, res) => { res.status(200).json('TODO') })
+
+router.delete('/delete', authorizationMiddleware, async (req, res) => { res.status(200).json('TODO') })
 
 module.exports = router;
