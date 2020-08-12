@@ -1,9 +1,12 @@
-    docker-compose up
-
-or 
-
-    node bin/start
+A non-functional application for hypothetical business (UEFA) using postgres, Node.js, Docker Compose; to show my code handwriting.
 
 
+```sh
+docker-compose up
 
-Document: http://localhost:3000/swagger.json
+# or
+
+node bin/start
+```
+
+>Document: http://localhost:3000/swagger.json
