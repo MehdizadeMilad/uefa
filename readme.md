@@ -1,4 +1,4 @@
-A non-functional application for hypothetical business (UEFA) using postgres, Node.js, Docker Compose; to show my code handwriting.
+A non-functional application for hypothetical business (UEFA) using postgres, Node.js, Docker Compose, with TDD; to show my code handwriting.
 
 
 ```sh
