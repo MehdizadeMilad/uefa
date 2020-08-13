@@ -51,3 +51,8 @@ module.exports = {
         app.close();
     }
 }
+
+process.on('SIGINT', () => {
+    console.log("Terminating...");
+    process.exit(0);
+});
